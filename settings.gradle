@@ -1,0 +1,4 @@
+rootProject.name = "moneyDiary"
+include(':api')
+include(':db')
+include(':calculator')
