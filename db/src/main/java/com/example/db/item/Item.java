@@ -1,7 +1,10 @@
 package com.example.db.item;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,8 +15,6 @@ import java.io.Serializable;
 public class Item {
     @Id
     private Key key;
-
-    private String name;
 
     private int price;
 

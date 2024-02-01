@@ -3,11 +3,12 @@ package com.example.calculator;
 import com.example.db.item.Item;
 import com.example.db.item.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Component
 public class ItemPriceCalculator {
 
     private final ItemRepository repository;
