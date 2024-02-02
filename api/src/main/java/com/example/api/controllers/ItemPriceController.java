@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @RestController
 public class ItemPriceController {
 
@@ -13,14 +15,12 @@ public class ItemPriceController {
 
     @Autowired
     public ItemPriceController(ItemPriceCalculator itemPriceCalculator) {
-        System.out.println("create item price controller");
         this.itemPriceCalculator = itemPriceCalculator;
     }
 
     @GetMapping("/getTotalPrice")
-    public int getTotalPrice() {
-        System.out.println("get!!");
-        return itemPriceCalculator.fetchTotalAmount();
+    public Map<String, Integer> getTotalPrice() {
+        return Map.of("totalPrice", itemPriceCalculator.fetchTotalAmount());
     }
 
     @GetMapping("/hello")

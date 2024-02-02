@@ -20,7 +20,7 @@ public class Item {
 
     @Embeddable
     @Data
-    public class Key implements Serializable {
+    public static class Key implements Serializable {
         private String category;
         private String name;
     }
