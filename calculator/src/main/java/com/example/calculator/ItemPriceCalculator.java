@@ -22,4 +22,8 @@ public class ItemPriceCalculator {
         List<Item> items = repository.findAll();
         return items.stream().mapToInt(Item::getPrice).sum();
     }
+
+    public int fetchTotalAmountWithinPeriod() {
+        List<Item> items = repository.findAllById();
+    }
 }
