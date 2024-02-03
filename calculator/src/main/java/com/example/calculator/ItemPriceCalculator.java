@@ -23,7 +23,8 @@ public class ItemPriceCalculator {
         return items.stream().mapToInt(Item::getPrice).sum();
     }
 
-    public int fetchTotalAmountWithinPeriod() {
-        List<Item> items = repository.findAllById();
+    public int fetchTotalAmountByCategory(String category) {
+        List<Item> items = repository.findAllByKeyCategory(category);
+        return items.stream().mapToInt(Item::getPrice).sum();
     }
 }

@@ -4,6 +4,7 @@ import com.example.calculator.ItemPriceCalculator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -21,6 +22,11 @@ public class ItemPriceController {
     @GetMapping("/getTotalPrice")
     public Map<String, Integer> getTotalPrice() {
         return Map.of("totalPrice", itemPriceCalculator.fetchTotalAmount());
+    }
+
+    @GetMapping("/getTotalPriceByCategory")
+    public Map<String, Integer> getTotalPriceByCategory(@RequestParam String category) {
+        return Map.of("totalPriceByCategory", itemPriceCalculator.fetchTotalAmountByCategory(category));
     }
 
     @GetMapping("/hello")
