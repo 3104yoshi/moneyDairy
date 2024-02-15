@@ -22,10 +22,24 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation project(':calculator')
 	implementation project(':db')
-	runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.projectlombok:lombok:1.18.26'
+	annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+//task runApi(type: JavaExec) {
+//	classpath = sourceSets.main.runtimeClasspath
+//	main =
+//}
+
+tasks.register('aaa') {
+	description = "A lovely greeting task."
+	doLast {
+		println 'Hello world!'
+	}
 }
